@@ -1,7 +1,6 @@
 openapi: 3.1.0
 info:
   title: Notion Job Task API
-  description: GPT Action to create job application tasks in a Notion database
   version: "1.0.0"
 servers:
   - url: https://api.notion.com/v1
@@ -9,7 +8,7 @@ paths:
   /pages:
     post:
       operationId: createTask
-      summary: Create a new task in the JobBot Pro Tracker database
+      summary: Create a new job task in Notion database
       parameters:
         - in: header
           name: Notion-Version
@@ -23,26 +22,37 @@ paths:
           application/json:
             schema:
               type: object
+              required:
+                - parent
+                - properties
               properties:
                 parent:
                   type: object
+                  required:
+                    - database_id
                   properties:
                     database_id:
                       type: string
-                      const: "216720ea-f31e-809c-9fa9-e0ee8a700c2d"
+                      default: "216720ea-f31e-809c-9fa9-e0ee8a700c2d"
                 properties:
                   type: object
                   properties:
                     Task:
                       type: object
+                      required:
+                        - title
                       properties:
                         title:
                           type: array
                           items:
                             type: object
+                            required:
+                              - text
                             properties:
                               text:
                                 type: object
+                                required:
+                                  - content
                                 properties:
                                   content:
                                     type: string
@@ -59,7 +69,7 @@ paths:
                                 properties:
                                   content:
                                     type: string
-                    Job Title:
+                    "Job Title":
                       type: object
                       properties:
                         rich_text:
@@ -88,7 +98,7 @@ paths:
                           properties:
                             name:
                               type: string
-                    Due Date:
+                    "Due Date":
                       type: object
                       properties:
                         date:
