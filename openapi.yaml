@@ -9,7 +9,7 @@ paths:
   /pages:
     post:
       operationId: createTask
-      summary: Create a new task in the Job Hunt Tracker database
+      summary: Create a new task in the JobBot Pro Tracker database
       requestBody:
         required: true
         content:
@@ -22,7 +22,7 @@ paths:
                   properties:
                     database_id:
                       type: string
-                      example: "216720eaf31e809c9fa9e0ee8a700c2d"
+                      default: "216720eaf31e809c9fa9ee0ee8a700c2d"
                 properties:
                   type: object
                   properties:
@@ -69,40 +69,4 @@ paths:
                       type: object
                       properties:
                         select:
-                          type: object
-                          properties:
-                            name:
-                              type: string
-                    Priority:
-                      type: object
-                      properties:
-                        select:
-                          type: object
-                          properties:
-                            name:
-                              type: string
-                    Due Date:
-                      type: object
-                      properties:
-                        date:
-                          type: object
-                          properties:
-                            start:
-                              type: string
-                              format: date
-                    Notes:
-                      type: object
-                      properties:
-                        rich_text:
-                          type: array
-                          items:
-                            type: object
-                            properties:
-                              text:
-                                type: object
-                                properties:
-                                  content:
-                                    type: string
-      responses:
-        "200":
-          description: Successful task creation
+                          type: obje
