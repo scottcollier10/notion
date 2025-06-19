@@ -1,0 +1,108 @@
+openapi: 3.0.1
+info:
+  title: Notion Job Task API
+  description: GPT Action to create job application tasks in a Notion database
+  version: "1.0.0"
+servers:
+  - url: https://api.notion.com/v1
+paths:
+  /pages:
+    post:
+      operationId: createTask
+      summary: Create a new task in the Job Hunt Tracker database
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                parent:
+                  type: object
+                  properties:
+                    database_id:
+                      type: string
+                      example: "216720eaf31e809c9fa9e0ee8a700c2d"
+                properties:
+                  type: object
+                  properties:
+                    Task:
+                      type: object
+                      properties:
+                        title:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              text:
+                                type: object
+                                properties:
+                                  content:
+                                    type: string
+                    Company:
+                      type: object
+                      properties:
+                        rich_text:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              text:
+                                type: object
+                                properties:
+                                  content:
+                                    type: string
+                    Job Title:
+                      type: object
+                      properties:
+                        rich_text:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              text:
+                                type: object
+                                properties:
+                                  content:
+                                    type: string
+                    Status:
+                      type: object
+                      properties:
+                        select:
+                          type: object
+                          properties:
+                            name:
+                              type: string
+                    Priority:
+                      type: object
+                      properties:
+                        select:
+                          type: object
+                          properties:
+                            name:
+                              type: string
+                    Due Date:
+                      type: object
+                      properties:
+                        date:
+                          type: object
+                          properties:
+                            start:
+                              type: string
+                              format: date
+                    Notes:
+                      type: object
+                      properties:
+                        rich_text:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              text:
+                                type: object
+                                properties:
+                                  content:
+                                    type: string
+      responses:
+        "200":
+          description: Successful task creation

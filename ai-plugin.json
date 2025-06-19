@@ -1,0 +1,19 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "JobBot Pro Tasks",
+  "name_for_model": "jobbot_pro_tasks",
+  "description_for_human": "Creates Notion tasks for job follow-up, reminders, and application steps.",
+  "description_for_model": "Use this plugin to send job application action items into a Notion database as structured tasks.",
+  "auth": {
+    "type": "service_http",
+    "authorization_type": "bearer",
+    "verification_tokens": {}
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://your-domain.com/openapi.yaml"
+  },
+  "logo_url": "https://scott-collier.com/logo.png",
+  "contact_email": "scottcollier@me.com",
+  "legal_info_url": "https://scott-collier.com/#legal"
+}
