@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.1.0
 info:
   title: Notion Job Task API
   description: GPT Action to create job application tasks in a Notion database
