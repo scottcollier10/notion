@@ -23,32 +23,26 @@ paths:
           application/json:
             schema:
               type: object
-              required: [parent, properties]
               properties:
                 parent:
                   type: object
-                  required: [database_id]
                   properties:
                     database_id:
-					 type: string
-					   const: "216720ea-f31e-809c-9fa9-e0ee8a700c2d"
+                      type: string
+                      const: "216720ea-f31e-809c-9fa9-e0ee8a700c2d"
                 properties:
                   type: object
-                  required: [Task]
                   properties:
                     Task:
                       type: object
-                      required: [title]
                       properties:
                         title:
                           type: array
                           items:
                             type: object
-                            required: [text]
                             properties:
                               text:
                                 type: object
-                                required: [content]
                                 properties:
                                   content:
                                     type: string
@@ -118,4 +112,4 @@ paths:
                                     type: string
       responses:
         "200":
-          description: Successful task creation
+          description: Task created successfully
