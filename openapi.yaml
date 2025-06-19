@@ -109,6 +109,20 @@ paths:
                                 properties:
                                   content:
                                     type: string
+	   parameters:
+        - in: header
+          name: Notion-Version
+          required: true
+          schema:
+            type: string
+            example: "2022-06-28"
+        - in: header
+          name: Authorization
+          required: true
+          schema:
+            type: string
+            example: "Bearer YOUR_NOTION_TOKEN"
+
       responses:
         "200":
           description: Successful task creation
