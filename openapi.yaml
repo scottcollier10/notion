@@ -19,23 +19,29 @@ paths:
               properties:
                 parent:
                   type: object
+                  required: [database_id]
                   properties:
                     database_id:
                       type: string
                       default: "216720eaf31e809c9fa9ee0ee8a700c2d"
                 properties:
                   type: object
+                  required:
+                    - Task
                   properties:
                     Task:
                       type: object
+                      required: [title]
                       properties:
                         title:
                           type: array
                           items:
                             type: object
+                            required: [text]
                             properties:
                               text:
                                 type: object
+                                required: [content]
                                 properties:
                                   content:
                                     type: string
@@ -69,4 +75,40 @@ paths:
                       type: object
                       properties:
                         select:
-                          type: obje
+                          type: object
+                          properties:
+                            name:
+                              type: string
+                    Priority:
+                      type: object
+                      properties:
+                        select:
+                          type: object
+                          properties:
+                            name:
+                              type: string
+                    Due Date:
+                      type: object
+                      properties:
+                        date:
+                          type: object
+                          properties:
+                            start:
+                              type: string
+                              format: date
+                    Notes:
+                      type: object
+                      properties:
+                        rich_text:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              text:
+                                type: object
+                                properties:
+                                  content:
+                                    type: string
+      responses:
+        "200":
+          description: Successful task creation
