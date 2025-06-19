@@ -30,8 +30,8 @@ paths:
                   required: [database_id]
                   properties:
                     database_id:
-                      type: string
-                      default: "216720ea-f31e-809c-9fa9-e0ee8a700c2d"
+					 type: string
+					   const: "216720ea-f31e-809c-9fa9-e0ee8a700c2d"
                 properties:
                   type: object
                   required: [Task]
