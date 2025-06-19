@@ -121,7 +121,7 @@ paths:
           required: true
           schema:
             type: string
-            example: "Bearer YOUR_NOTION_TOKEN"
+            example: "216720eaf31e809c9fa9ee0ee8a700c2d"
 
       responses:
         "200":
