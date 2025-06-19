@@ -10,12 +10,20 @@ paths:
     post:
       operationId: createTask
       summary: Create a new task in the JobBot Pro Tracker database
+      parameters:
+        - in: header
+          name: Notion-Version
+          required: true
+          schema:
+            type: string
+            example: "2022-06-28"
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
+              required: [parent, properties]
               properties:
                 parent:
                   type: object
@@ -23,11 +31,10 @@ paths:
                   properties:
                     database_id:
                       type: string
-                      default: "216720eaf31e809c9fa9ee0ee8a700c2d"
+                      default: "216720ea-f31e-809c-9fa9-e0ee8a700c2d"
                 properties:
                   type: object
-                  required:
-                    - Task
+                  required: [Task]
                   properties:
                     Task:
                       type: object
@@ -109,20 +116,6 @@ paths:
                                 properties:
                                   content:
                                     type: string
-	   parameters:
-        - in: header
-          name: Notion-Version
-          required: true
-          schema:
-            type: string
-            example: "2022-06-28"
-        - in: header
-          name: Authorization
-          required: true
-          schema:
-            type: string
-            example: "216720eaf31e809c9fa9ee0ee8a700c2d"
-
       responses:
         "200":
           description: Successful task creation
